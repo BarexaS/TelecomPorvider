@@ -28,7 +28,7 @@ public class TaxCollectorImpl implements TaxCollector {
     @Async
     public void collectTax() {
         LocalDateTime now = LocalDateTime.now();
-        long period = now.until(now.plusSeconds(5), ChronoUnit.MILLIS);
+        long period = now.until(now.plusMonths(1), ChronoUnit.MILLIS);
         while (!Thread.interrupted()) {
             collecting();
             try {
